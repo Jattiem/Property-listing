@@ -25,7 +25,7 @@
                   <li class="nav-item">
                     <a class="nav-link" href="admin.html">Other</a>
                   </li>
-                </ul>
+                </ul>  
               </div>
             </div>
           </nav>
@@ -38,66 +38,70 @@
     </section>
     <br>
     <section id="search">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#"></a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Property
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Location
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Property Size
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                      <li></li>
-                      <li></li>
-                      <li</li>
-                      <li></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Your Budget
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                      <li></li>
-                    </ul>
-                  </li>
-                </ul>
-                <form class="d-flex" role="search">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
+        <div class="container p-3 my-3">
+            <h2 class="text-center">Filter</h2>
+            <div class="row">
+                <div class="mx-auto col-lg-2 col-md-6 ">
+                    <label for="property">Looking For:</label>
+                    <select class="form-select" name="property" id="property">
+                        <option value="">Apartment</option>
+                        <option value="">Office</option>
+                        <option value="">Commercial</option>
+                        <option value="">Shop</option>
+                        <option value="">Residential</option>
+                        <option value="">Condo</option>
+                        <option value="">Multi Family Home</option>
+                        <option value="">Single Family Home</option>
+                        <option value="">Studio</option>
+                        <option value="">Villa</option>
+                    </select>
+                </div>
+                <div class="mx-auto col-lg-2 col-md-6 ">
+                    <label for="location">Location: </label>
+                    <select class="form-select" name="location" id="location">
+                        <option value="">All Cities</option>
+                        <option value="">Chicago</option>
+                        <option value="">Los Angeles</option>
+                        <option value="">Miami</option>
+                        <option value="">New York</option>
+                    </select>
+                </div>
+                <div class="mx-auto col-lg-2 col-md-6 ">
+                    <label for="size">Property size: </label>
+                    <select class="form-select" name="size" id="size">
+                        <option value="">Bedrooms</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                        <option value="">10</option>
+                        <option value="">Any</option>
+                    </select>
+                </div>
+                <div class="mx-auto col-lg-2 col-md-6 ">
+                    <label for="budget">Your Budget: </label>
+                    <select class="form-select" name="budget" id="budget">
+                        <option value="">Max. Price</option>
+                        <option value="">Any</option>
+                        <option value="">$5,000</option>
+                        <option value="">$10,000</option>
+                        <option value="">$50,000</option>
+                        <option value="">$100,000</option>
+                    </select>
+                </div>
+                <button id="btnSearch" class="mx-auto col-lg-2 col-md-6 btn btn-success h-50 mt-4">Search</button>
             </div>
-          </nav>
+        </div>
+    </section>
+    <section id="property">
+        <div id="propertiesForCards"  class="flex container">
+            
+        </div>
     </section>
     <br>
     <section class="" id="footer">
