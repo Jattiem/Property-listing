@@ -23,7 +23,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:1,
         yearBuilt:2016,
         SqFt:2,
-        price:233949,
+        price:100000,
         pricePer:11000,
         url:'./images/Apartment.jpg'
     },
@@ -39,7 +39,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:1,
         yearBuilt:2016,
         SqFt:3410,
-        price:259999,
+        price:400000,
         pricePer:3500,
         url:'./images/Single-Family-Home.jpg'
     },
@@ -55,7 +55,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:1,
         yearBuilt:2016,
         SqFt:3410,
-        price:109939,
+        price:100000,
         pricePer:5400,
         url:'./images/Villa.jpg'
     },
@@ -66,12 +66,12 @@ localStorage.setItem('property',JSON.stringify(properties =
         title:'Condo on top',
         location:'New York',
         Area:'7111 qinhut Ave, Condo, CA 92343',
-        Bedrooms:4,
+        Bedrooms:3,
         Bathrooms:2,
         Garage:2,
         yearBuilt:2015,
         SqFt:1200,
-        price:244959,
+        price:200000,
         pricePer:7860,
         url:'./images/Condo.jpg'
     },
@@ -87,7 +87,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:2,
         yearBuilt:2015,
         SqFt:1200,
-        price:345009,
+        price:300000,
         pricePer:7860,
         url:'./images/Apartment2.jpg'
     },
@@ -103,7 +103,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:1,
         yearBuilt:2016,
         SqFt:3410,
-        price:450000,
+        price:200000,
         pricePer:3500,
         url:'./images/Single-Family-Home2.jpg'
     },
@@ -119,7 +119,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:1,
         yearBuilt:2016,
         SqFt:3410,
-        price:456699,
+        price:400000,
         pricePer:5400,
         url:'./images/Villa2.jpg'
     },
@@ -135,7 +135,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:2,
         yearBuilt:2015,
         SqFt:1200,
-        price:339459,
+        price:300000,
         pricePer:7860,
         url:'./images/Condo2.jpg'
     },
@@ -151,7 +151,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:2,
         yearBuilt:2015,
         SqFt:1200,
-        price:434999,
+        price:300000,
         pricePer:7860,
         url:'./images/Apartment3.jpg'
     },
@@ -167,7 +167,7 @@ localStorage.setItem('property',JSON.stringify(properties =
         Garage:1,
         yearBuilt:2016,
         SqFt:3410,
-        price:556789,
+        price:200000,
         pricePer:5400,
         url:'./images/Villa3.jpg'
     },
@@ -221,7 +221,7 @@ function filterAll(){
         filteredLocations = currentItems;
     }else{
         filteredLocations = currentItems.filter( x=>{
-            return x.Area.indexof(locationFilter.value);
+            return x.location == locationFilter.value;
         });
     }
     
@@ -229,14 +229,14 @@ function filterAll(){
         filteredSizes = currentItems;
     }else{
         filteredSizes = currentItems.filter( x=>{
-            return x.Bedrooms <= propertySizeFilter.value;
+            return x.Bedrooms == propertySizeFilter.value;
         });
     }
     if(budgetFilter.value == "Any"){
         filteredBudget = currentItems;
     }else{
         filteredBudget = currentItems.filter( x=>{
-            return x.price <= budgetFilter.value;
+            return x.price == budgetFilter.value;
         });
     }
 
