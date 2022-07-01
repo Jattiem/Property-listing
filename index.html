@@ -10,6 +10,7 @@
     <title>Property-listing</title>
 </head>
 <body>
+    <!-- Navbar -->
     <section id="nav">
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container-fluid">
@@ -92,6 +93,27 @@
                         <option value="">$10,000</option>
                         <option value="">$50,000</option>
                         <option value="">$100,000</option>
+                    </select>
+                </div>
+                <!-- <div>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a onclick="sortByDesc()" class="dropdown-item">Descending</a>
+                        </li>
+                        <li>
+                            <a onclick="sortByAsc()" class="dropdown-item">Ascending</a>
+                        </li>
+                        <li>
+                            <a onclick="sortByDate()" class="dropdown-item">By Date</a>
+                        </li>
+                    </ul>
+                </div> -->
+                <div class="mx-auto col-lg-2 col-md-6 ">
+                    <label for="budget">Sort by: </label>
+                    <select class="form-select" name="budget" id="budget">
+                        <option onclick="sortByAsc()" value="">Ascending</option>
+                        <option onclick="sortByDes()" value="">Descending</option>
+                        <option onclick="sortByDate()" value="">Date</option>
                     </select>
                 </div>
                 <!-- <button id="btnSearch" class="mx-auto col-lg-2 col-md-6 btn btn-success h-50 mt-4">Search</button> -->
