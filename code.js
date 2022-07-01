@@ -1,3 +1,13 @@
+let propertyFilter = document.getElementById("FilterByProperty");
+let locationFilter = document.getElementById("FilterByLocation");
+let propertySizeFilter = document.getElementById("FilterBySize");
+let budgetFilter = document.getElementById("FilterByBudget");
+prop = localStorageProp();
+
+function localStorageProp() {
+    return JSON.parse(localStorage.getItem('property'));
+}
+
 localStorage.setItem('property',JSON.stringify(properties = [{
     id:1,
     type:"Studio",
@@ -174,9 +184,6 @@ function getProperties(prop){
                         <h6 class="card-title">${property.Area}</h6>
                             <h5>$${property.price}</h5>
                             <h6>$${property.pricePer}per month</h6>
-                            <p class="card-text">
-                                ${property.description}
-                            </p>
                             <div class="card-list">
                             <ul>
                             <li>Bedrooms: ${property.Bedrooms}</li>
@@ -193,14 +200,76 @@ function getProperties(prop){
     });
 }
 getProperties(properties);
-function sortByAsc(){
-    let sortedProperties = properties.sort((a,b) => {
-        if (a.title > b.title) return 1;
-        if (a.title < b.title) return -1;
-        return 0;
-    });
+
+function filterAll(){
+    let currentItems = localStorageProp();
     
-}
+    let filteredProperties, filteredLocations,filteredSizes,filteredBudget;
+
+    if(propertyFilter.value == "Any"){
+        filteredProperties = currentItems;
+    }else{
+        filteredProperties = currentItems.filter( x=>{
+            return x.type == propertyFilter.value;
+        })
+    }
+    
+    
+    // if(locationFilter.value == "AllCities"){
+    //     filteredLocations = currentItems;
+    // }else{
+    //     filteredLocations = currentItems.filter( x=>{
+    //         return x.Area.indexof(locationFilter.value);
+    //     })
+    // }
+    
+    // if(propertySizeFilter.value == "Any"){
+    //     filteredSizes = currentItems;
+    // }else{
+    //     filteredSizes = currentItems.filter( x=>{
+    //         return x.Bedrooms <= propertySizeFilter.value;
+    //     })
+    // }
+    // if(budgetFilter.value == "Any"){
+    //     filteredBudget = currentItems;
+    // }else{
+    //     filteredBudget = currentItems.filter( x=>{
+    //         return x.price <= budgetFilter.value;
+    //     })
+    // }
+
+
+    const allFilters = [filteredProperties, filteredLocations ,filteredSizes ,filteredBudget];
+
+    let values = allFilters.filter(x =>{
+        return x.length != currentItems.length;
+    });
+
+    if(values.length == 0){
+        for(let i = 0; i<currentItems.length;i++){
+            currentItems[i].id = i+1;
+        }
+        getProperties(currentItems);
+    }else{
+        let arrayOfArrays = [];
+    
+        for(let i = 0; i<values.length;i++){
+            arrayOfArrays.push(values[i].length);
+        }
+    
+        const minValueIndex = (arrayOfArrays.indexOf(Math.min(...arrayOfArrays)));
+        const maxValueIndex = (arrayOfArrays.indexOf(Math.max(...arrayOfArrays)));
+    
+        let filter = values[maxValueIndex].filter(x =>{
+            return values[minValueIndex].includes(x);
+        })
+    
+        for(let i = 0; i<filter.length;i++){
+            filter[i].id = i+1;
+        }
+        getProperties(filter);
+    }
+};
 
 
 
