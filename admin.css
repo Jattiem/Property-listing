@@ -10,3 +10,7 @@
         flex-direction: column;
     }
 };
+
+body{
+    font-family: sans-serif;
+}
